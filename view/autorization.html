@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="../style/style_auth.css">
+    <!-- Подключение Font Awesome для отображения стрелки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button i {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-form">
+        <h1>Авторизация</h1>
+        <form id="signin" method="POST" action="../back/autorization.php" autocomplete="off">
+            <input type="text" id="email" name="email" placeholder="Email" required />
+            <input type="password" id="password" name="password" placeholder="Password" required />
+            <!-- Кнопка с иконкой стрелки -->
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+
+    <script>
+        document.getElementById('signin').addEventListener('submit', function (event) {
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = '';
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                errorMessage.textContent = 'Введите корректный email.';
+                event.preventDefault(); // Отмена отправки формы
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

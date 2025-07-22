@@ -1,0 +1,76 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:rgb(255, 245, 245); /* Бежевый фон */
+    color: #000; /* Черный текст */
+}
+#fuel-form {
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+    backdrop-filter: blur(10px);
+}
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #000; /* Черный текст */
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000; /* Черный текст */
+}
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px 4px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    outline: none;
+}
+select option {
+    background: #fff;
+    color: #000;
+}
+input[type="number"]::placeholder {
+    color: #666;
+}
+button {
+    background-color:rgb(25, 166, 254); /* Голубая кнопка */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #add8e6;
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.95);
+}
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+input[disabled], select[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
